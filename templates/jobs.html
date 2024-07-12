@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ company_name }} Careers
+{% endblock %}
+{% block content %}
+<img class="img-fluid mb-2" src="/static/banner.jpg" alt="Your Career">
+<div class="container">
+    <h1 class="text-center mt-2 mb-4">Hello there! You will learn about the job openings at {{ company_name }}
+        here.
+    </h1>
+    <br>
+    <h2 class="text-center mt-2 mb-4">About {{ company_name }}</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <p class="lead">{{ company_name }} is committed to providing accessible and high-quality educational
+                resources to everyone. Our mission is to empower individuals through education, enabling them to achieve
+                their personal and professional goals. We believe in the power of knowledge and aim to democratize
+                education by offering free courses in various domains.</p>
+        </div>
+        <div class="d-none d-md-block col-4">
+            <img src="/static/people-working.jpg" alt="People Working" style="height: 320px;">
+        </div>
+    </div>
+    <br>
+    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+    <div>
+        {% for job in jobs %}
+        <div class="mb-4 row">
+            <div class="col-11">
+                <h4 class="mb-2" style="color: rgb(120, 120, 120);">{{ job.title }}</h4>
+                <div><b>Location: </b>{{ job.location }}</div>
+                <div>
+                    <p>{{ job.description }}</p>
+                </div>
+            </div>
+            <div class="col-1 mt-4 ">
+                <a href="mailto:prashinparikh99@gmail.com?subject=Application for {{ job['title'] }}"
+                    class="btn btn-outline-primary pt-2 pb-2 ps-3 pe-3">Apply</a>
+            </div>
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="text-center">
+        <a class="btn btn-outline-primary btn-lg" href="{{ url_for('contact') }}">Contact Us</a>
+    </div>
+</div>
+{% endblock %}

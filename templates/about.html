@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - {{ company_name }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .founder-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .founder-card {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for('home') }}">{{ company_name }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('about') }}">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('courses') }}">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html> -->
+
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<style>
+    .founder-img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .founder-card {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+About {{ company_name }}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">About Us</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-6 founder-card">
+            <img src="/static/prashin.jpg" alt="Founder 1" class="founder-img">
+            <h3>Prashin Jignesh Parikh</h3>
+            <p>Founder and Chief Technology Officer (CTO) of {{ company_name }}. With a background in Computer Science
+                and Engineering (Data Science), Prashin leads the technical initiatives of our company. Passionate about
+                leveraging technology to democratize education and empower learners worldwide.</p>
+        </div>
+        <div class="col-md-6 founder-card">
+            <img src="/static/sushrut.jpg" alt="Founder 2" class="founder-img">
+            <h3>Sushrut Rakesh Mehta</h3>
+            <p>Co-founder and Financial Expert at {{ company_name }}. With extensive experience in finance and
+                education, Sushrut heads our financial branch and plays a key role in creating comprehensive and
+                accessible courses. Committed to empowering individuals through financial literacy and education.</p>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h2 class="text-center">Our Motive and Objectives</h2>
+        <hr>
+        <p>
+            {{ company_name }} is committed to providing accessible and high-quality educational resources to everyone.
+            Our mission is to empower individuals through education, enabling them to achieve their personal and
+            professional goals. We believe in the power of knowledge and aim to democratize education by offering free
+            courses in various domains.
+        </p>
+        <p>
+            "Finance with Sushi" is our dedicated platform for financial and technical education. We strive to create
+            comprehensive, engaging, and practical courses that equip learners with the skills they need to succeed in
+            today's competitive world. Our objectives include:
+        </p>
+        <ul>
+            <li>Delivering top-notch educational content at no cost to the learner.</li>
+            <li>Creating a community of lifelong learners who support and inspire each other.</li>
+            <li>Continuously updating our courses to reflect the latest industry trends and technologies.</li>
+            <li>Providing a flexible and inclusive learning environment that accommodates diverse learning styles.</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
