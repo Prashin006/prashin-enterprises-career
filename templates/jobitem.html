@@ -7,7 +7,9 @@
         {% endif %}
     </div>
     <div class="col-1 mt-4 ">
-        <button class="btn btn-outline-primary pt-2 pb-2 ps-3 pe-3">Apply</button>
+        {% set first_name = company_name.split()[0] %}
+        <a href="mailto:jobs@{{ first_name | lower }}.com?subject=Application for {{ job['title'] }}" class="btn btn-outline-primary pt-2 pb-2 ps-3 pe-3">Apply</a>
     </div>
     <hr>
+    
 </div>

@@ -26,11 +26,12 @@ JOBS =[
         'salary':'$ 105,000'
     }
 ]
+description="Pushti Sanitaryware is a leading market trader and manufacturer of construction items like bolts, nuts and sanitaryware"
 
 app = Flask(__name__)
 @app.route("/")
 def hello_world():
-    return render_template('home.html',jobs=JOBS,company_name='Pushti Sanitaryware')
+    return render_template('home.html',jobs=JOBS,company_name='Pushti Sanitaryware',description=description)
 
 @app.route("/api/jobs")
 def list_jobs():

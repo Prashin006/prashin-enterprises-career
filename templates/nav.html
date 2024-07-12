@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg shadow-lg bg-border-tertiary rounded fixed-top bg-white" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('hello_world') }}">{{ company_name }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample05">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('hello_world') }}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://prashinparikh.pythonanywhere.com" target="_blank">Link</a>
+          </li>
+        </ul>
+        <form role="search d-flex">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+<div style="height: 56px;"></div>
